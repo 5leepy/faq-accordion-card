@@ -1,0 +1,164 @@
+/*## ColorsPrimaryText
+- Very dark desaturated blue: hsl(238, 29%, 16%)
+- Soft red: hsl(14, 88%, 65%)
+Background gradient:
+- Soft violet: hsl(273, 75%, 66%)
+- Soft blue: hsl(240, 73%, 65%)
+### NeutralText
+- Very dark grayish blue: hsl(237, 12%, 33%)
+- Dark grayish blue: hsl(240, 6%, 50%)
+#### Dividers
+- Light grayish blue: hsl(240, 5%, 91%)
+- Font size: 12px */
+
+$text-primary900:hsl(238, 29%, 16%);
+$text-primary500:hsl(14, 88%, 65%);
+$text-neutral700:hsl(237, 12%, 33%);
+$text-neutral500:hsl(240, 6%, 50%);
+$bg-primary500:hsl(273, 75%, 66%);
+$bg-primary700:hsl(240, 73%, 65%);
+$bg-primary300:hsl(240, 5%, 91%);
+
+$accordion-body-padding-x: 1rem 0;
+$accordion-body-padding-y: 0 0;
+
+$accordion-button-padding-y: 1.4167rem;   
+$accordion-button-padding-x: 0;
+$accordion-button-icon: url(/images/icon-arrow-down.svg);
+$accordion-button-active-icon: url(/images/icon-arrow-down.svg);
+$accordion-icon-width: 0.84rem;
+$accordion-button-active-bg: none;
+$accordion-button-active-color: none;
+$accordion-button-focus-box-shadow:none;
+$accordion-border-color:  $bg-primary300; 
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html {
+    font-size: 12px;
+
+    &:focus-within {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    height: 100vh;
+    background-image: linear-gradient(180deg ,hsl(273, 75%, 66%) , hsl(240, 73%, 65%));
+    background-repeat: no-repeat;
+}
+
+main {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0 2rem;
+    
+}
+.wrap {
+    padding: 0 2rem 4rem;
+    width: 100%;
+}
+
+.card {
+    border: none;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    border-radius: 1.75rem;
+    box-shadow: 0px 20px 25px -20px darken($text-neutral700, 10%);
+    max-width: 920px;
+    .faq-img {
+        max-width: 240px;
+        margin-bottom: 2.84em;
+        position: relative;
+        .img-online img {
+            width: 100%;
+            margin-top: -46%;
+        }
+        .img-shadow {
+            width: 100%;
+            margin-top: -30%;
+        }
+        .img-box {
+            display: none;
+        }
+    }
+    &-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 18px;
+        text-align: center;
+        margin-bottom: 1.34rem;
+    }
+    
+    .accordion {
+        width: 100%;
+        &-button {
+            font-size: 1.084rem;
+            &:not(.collapsed) {
+                font-weight: 700;
+            }
+        }
+        &-item {
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid $bg-primary300;
+        }
+        &-body {
+            font-weight: 400;
+            color: $text-neutral500;
+            letter-spacing: .167px;
+        }
+    }
+    @media (min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+        background-image: url(/images/bg-pattern-desktop.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left -532px bottom 30%;
+        .faq-img {
+            margin: 0;
+            max-width: 460px;
+            height: 509px;
+            .img-box {
+                display: block;
+                position: absolute;
+                width: 13%;
+                z-index: 1;
+                top: 39%;
+                left: -20%;
+            }
+            .img-online {
+                overflow: hidden;
+                img {
+                    position: relative;
+                    min-width: 460px;
+                    margin: 72px auto;
+                    left: -72px;
+                }
+            }
+            .img-shadow {
+                display: none;
+            }
+        }
+        &-title {
+            font-size: 2.667rem;
+            text-align: start;
+        }
+        .accordion {
+            &-button {
+                font-size: 1.167rem;
+                &::after {
+                    margin-right: 1rem;
+                }
+                &:hover {
+                    color: $text-primary500;
+                }
+            }
+        }
+        .wrap {
+            padding: 1.834rem 8.167rem 4rem 1.34rem;
+        }
+    }
+}
