@@ -11927,7 +11927,7 @@ main {
   color: hsl(240deg, 6%, 50%);
   letter-spacing: 0.167px;
 }
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .card {
     grid-template-columns: 1fr 1fr;
     background-image: url(/images/bg-pattern-desktop.svg);
